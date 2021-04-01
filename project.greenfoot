@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Mar 30 07:46:36 EDT 2021
+#Thu Apr 01 07:46:25 EDT 2021
 project.charset=UTF-8
 class.Block.superclass=greenfoot.Actor
 mainWindow.height=358
@@ -17,9 +17,9 @@ mainWindow.x=-18
 class.Pizza.superclass=greenfoot.Actor
 package.numDependencies=0
 class.RobotWorld.image=rivets.jpg
-mainWindow.width=713
 package.numTargets=0
-class.Robot.superclass=greenfoot.Actor
+mainWindow.width=713
 class.ScorePanel.superclass=greenfoot.Actor
+class.Robot.superclass=greenfoot.Actor
 class.Robot.image=man01.png
 class.Home.superclass=greenfoot.Actor
