@@ -16,7 +16,7 @@ public class RobotWorld extends World
     public RobotWorld()
     {    
         super(800, 600, 1); 
-        addObject(new Robot(), 20, 30);
+        addObject(new Robot(), 45, 30);
         addObject(new Wall(), 60, 150);
         addObject(new Wall(), 160, 150);
         addObject(new Wall(), 260, 150);

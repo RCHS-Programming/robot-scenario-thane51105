@@ -10,6 +10,7 @@ public class Robot extends Actor
 {
     private GreenfootImage robotimage1= new GreenfootImage("man01.png");
     private GreenfootImage robotimage2= new GreenfootImage("man02.png");
+    private GreenfootImage gameover= new GreenfootImage("gameover.png");
     private int timeToSwitchImages=0;
     private int Lives=3;
     private int Score=0;
@@ -25,6 +26,8 @@ public class Robot extends Actor
         detectBlockCollision();
         detectHome();
         eatPizza();
+        testEndGame();
+        showStatus();
     }    
     
     public void robotMovement()
@@ -58,8 +61,9 @@ public class Robot extends Actor
     {
         if (isTouching(Wall.class))
         {
-            setLocation( 20, 30 );
+            setLocation( 45, 30 );
             Greenfoot.playSound ("hurt.wav");
+            Lives = Lives - 1;
         }
     }
     
@@ -67,8 +71,9 @@ public class Robot extends Actor
     {
         if (isTouching(Block.class))
         {
-            setLocation( 20, 30 );
+            setLocation( 45, 30 );
             Greenfoot.playSound ("hurt.wav");
+            Lives = Lives - 1;
         }
     }
     
@@ -76,8 +81,9 @@ public class Robot extends Actor
     {
         if (isTouching(Home.class))
         {
-            setLocation( 20, 30 );
+            setLocation( 45, 30 );
             Greenfoot.playSound ("yipee.wav");
+            Score = Score + 1;
             if(pizzaEaten ==5)
             {
                 Greenfoot.stop();
@@ -109,7 +115,22 @@ public class Robot extends Actor
         }
         else
             timeToSwitchImages++;
+    }
+    
+    public void testEndGame()
+    {
+        if(Lives<0)
+        {
+            Greenfoot.stop();
+            setImage (gameover);
         }
+    }
+    
+    public void showStatus()
+    {
+        getWorld().showText("lives : "+Lives, 70,540);
+        getWorld().showText("Pizzas :  "+pizzaEaten, 70,560);
+    }
         }
     
 
